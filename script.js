@@ -1,4 +1,4 @@
-const targetDate = new Date("2026-09-11T00:00:00+03:00").getTime();
+const targetDate = new Date("2026-09-11T19:00:00+03:00").getTime();
 
 const guests = {
   mama: "Дорогая мамочка",
@@ -20,12 +20,12 @@ const guests = {
   nigina: "Нигина",
 };
 
-const guestGreeting = document.querySelector("[data-guest-greeting]");
 const params = new URLSearchParams(window.location.search);
 const guestKey = params.get("guest") || params.get("to");
+const guestGreeting = document.querySelector("[data-guest-greeting]");
 
 if (guestGreeting && guestKey && guests[guestKey]) {
-  guestGreeting.textContent = guests[guestKey];
+  guestGreeting.textContent = `${guests[guestKey]}!`;
   guestGreeting.hidden = false;
 }
 
@@ -41,6 +41,8 @@ function pad(value) {
 }
 
 function updateCountdown() {
+  if (!countdown.days) return;
+
   const distance = Math.max(0, targetDate - Date.now());
   const day = 24 * 60 * 60 * 1000;
   const hour = 60 * 60 * 1000;
@@ -53,7 +55,7 @@ function updateCountdown() {
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+window.setInterval(updateCountdown, 1000);
 
 const revealItems = document.querySelectorAll(".reveal");
 
@@ -67,7 +69,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.18 },
+    { threshold: 0.16 },
   );
 
   revealItems.forEach((item) => observer.observe(item));
