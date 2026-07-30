@@ -1,6 +1,6 @@
 (() => {
   const field = document.createElement("div");
-  const count = window.innerWidth <= 560 ? 220 : 340;
+  const count = window.innerWidth <= 560 ? 170 : 260;
   let seed = 0x7f4a7c15;
 
   const random = () => {

@@ -9,7 +9,8 @@
       content="Персональное приглашение для Нигины на 15 августа."
     />
     <title>Для Нигины · She said yes!</title>
-    <link rel="stylesheet" href="personal.css?v=20260730-date-up" />
+    <link rel="preload" href="assets/seven-friends-one-glass-3d-v5-960.jpg" as="image" type="image/jpeg" fetchpriority="high" />
+    <link rel="stylesheet" href="personal.css?v=20260730-fast-load" />
   </head>
   <body>
     <main class="invitation personal-page" style="--personal-accent:#9b1834">
@@ -26,13 +27,18 @@
         </section>
         <figure class="hero-art">
           <img
-            src="assets/seven-friends-one-glass-3d-v5.png"
+            src="assets/seven-friends-one-glass-3d-v5-960.jpg"
+            width="960"
+            height="960"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
             alt="Семь подруг сидят в бокале с розовым напитком"
           />
           <figcaption><span></span>seven friends · one magical night<span></span></figcaption>
         </figure>
       </section>
     </main>
-    <script src="effects.js?v=20260730-glass"></script>
+    <script src="effects.js?v=20260730-fast-load"></script>
   </body>
 </html>

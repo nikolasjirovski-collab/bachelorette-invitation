@@ -308,9 +308,6 @@ body {
   opacity: var(--opacity);
   background: linear-gradient(135deg, #ffd9e7, #e96798 62%, #fff0f7);
   clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
-  filter:
-    drop-shadow(0 0 3px rgba(255,255,255,.42))
-    drop-shadow(0 0 6px rgba(230,91,139,.52));
   animation: screenStarDance var(--duration) var(--delay) ease-in-out infinite;
 }
 
