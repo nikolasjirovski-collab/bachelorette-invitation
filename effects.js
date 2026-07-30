@@ -1,6 +1,9 @@
 (() => {
+  const startEffects = () => {
+  const isMobile = window.matchMedia("(max-width: 560px)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const field = document.createElement("div");
-  const count = window.innerWidth <= 560 ? 170 : 260;
+  const count = reduceMotion ? 0 : isMobile ? 56 : 180;
   let seed = 0x7f4a7c15;
 
   const random = () => {
@@ -41,11 +44,11 @@
     field.append(star);
   }
 
-  document.body.prepend(field);
+  if (count > 0) document.body.prepend(field);
 
   const glass = document.querySelector(".hero-art");
 
-  if (glass) {
+  if (glass && !isMobile && !reduceMotion) {
     const overlay = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     overlay.classList.add("glass-edge-overlay");
     overlay.setAttribute("viewBox", "0 0 1256 1256");
@@ -72,5 +75,20 @@
       <path class="glass-edge-glint" style="--edge-delay:-2.65s" d="M0-14 L4-4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4-4Z" transform="translate(775 1174)"/>
     `;
     glass.append(overlay);
+  }
+  };
+
+  const scheduleEffects = () => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(startEffects, { timeout: 1200 });
+    } else {
+      window.setTimeout(startEffects, 180);
+    }
+  };
+
+  if (document.readyState === "complete") {
+    scheduleEffects();
+  } else {
+    window.addEventListener("load", scheduleEffects, { once: true });
   }
 })();

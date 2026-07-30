@@ -514,6 +514,7 @@ body {
   z-index: 12;
   overflow: hidden;
   pointer-events: none;
+  contain: strict;
 }
 
 .screen-star {
@@ -795,5 +796,18 @@ body {
 
   .bride-page .friends-signature li {
     font-size: 1.17rem;
+  }
+
+  .personal-page .hero-art img {
+    mask-image: none;
+  }
+
+  .personal-page .hero-art::before {
+    mix-blend-mode: normal;
+    animation-duration: 6.8s;
+  }
+
+  .screen-star.is-white {
+    filter: none;
   }
 }
