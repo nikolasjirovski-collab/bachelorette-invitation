@@ -1,8 +1,8 @@
 @import url("static.css?v=20260730-personal-base");
 
 @font-face {
-  font-family: "Great Vibes";
-  src: url("assets/fonts/GreatVibes-Regular.woff2") format("woff2");
+  font-family: "Judith Deco";
+  src: url("assets/fonts/JudithDeco.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -729,7 +729,7 @@ body {
 
 .bride-page,
 .bride-page * {
-  font-family: "Great Vibes", cursive !important;
+  font-family: "Judith Deco", Georgia, serif !important;
   font-style: normal !important;
   font-weight: 400 !important;
 }
@@ -778,6 +778,19 @@ body {
 @media (max-width: 560px) {
   .bride-page .bride-copy {
     font-size: 1.25rem;
+  }
+
+  .bride-page .bride-details .date-line {
+    flex-wrap: wrap;
+  }
+
+  .bride-page .bride-details .date-line > i {
+    display: none;
+  }
+
+  .bride-page .bride-details .date-time {
+    flex-basis: 100%;
+    margin-top: 5px;
   }
 
   .bride-page .friends-signature li {
