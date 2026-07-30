@@ -123,6 +123,166 @@ body {
   --personal-accent: var(--wine);
 }
 
+.bride-page {
+  --personal-accent: #861c3b;
+  padding-bottom: clamp(58px, 9vw, 88px);
+}
+
+.bride-page::before {
+  border-color: rgba(134, 28, 59, .18);
+}
+
+.bride-page .kicker {
+  color: rgba(116, 24, 46, .72);
+}
+
+.bride-intro h1 {
+  margin-top: 30px;
+  font-size: clamp(5rem, 12vw, 7.8rem);
+  line-height: .7;
+}
+
+.bride-teaser {
+  max-width: 560px;
+  margin: 34px auto 0;
+  color: #73162f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.18rem, 3.5vw, 1.55rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.bride-teaser span {
+  display: inline-block;
+  margin-left: 3px;
+  filter: drop-shadow(0 4px 7px rgba(86, 11, 32, .15));
+  transform: rotate(7deg);
+}
+
+.bride-copy {
+  max-width: 570px;
+  margin: 21px auto 0;
+  color: #704f5a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 2.8vw, 1.18rem);
+  line-height: 1.66;
+}
+
+.bride-details,
+.bride-finale {
+  position: relative;
+  z-index: 2;
+  width: min(570px, 100%);
+  margin: 38px auto 0;
+}
+
+.bride-details {
+  padding: clamp(27px, 5vw, 39px) clamp(20px, 5vw, 40px) 31px;
+  border: 1px solid rgba(116, 24, 46, .14);
+  border-radius: 30px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.38), rgba(255,255,255,.13));
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.72),
+    0 18px 42px rgba(108, 25, 51, .08);
+}
+
+.ready-label {
+  color: rgba(116, 24, 46, .62);
+  font: 700 .62rem/1 "Courier New", monospace;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.bride-details .ornament {
+  margin: 16px auto 19px;
+}
+
+.bride-note,
+.secret-place {
+  color: #6f5059;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(.94rem, 2.5vw, 1.08rem);
+  line-height: 1.62;
+}
+
+.bride-note {
+  margin-top: 25px;
+}
+
+.bride-note em {
+  display: block;
+  color: var(--personal-accent);
+}
+
+.secret-place {
+  margin-top: 13px;
+  font-style: italic;
+}
+
+.bride-page .celebration {
+  margin-top: 39px;
+}
+
+.bride-page .hero-art figcaption {
+  color: rgba(116, 24, 46, .65);
+}
+
+.bride-finale {
+  margin-top: 22px;
+  padding: 0 clamp(4px, 3vw, 20px);
+}
+
+.final-call {
+  color: #704f5a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.06rem, 3vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.final-call strong {
+  color: var(--personal-accent);
+  font-size: 1.12em;
+}
+
+.friends-signature {
+  margin-top: 32px;
+}
+
+.friends-signature > p {
+  color: var(--personal-accent);
+  font-family: "Cormorant Infant", Georgia, serif;
+  font-size: clamp(2.5rem, 7vw, 3.7rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.friends-signature ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 490px;
+  margin: 20px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.friends-signature li {
+  padding: 8px 13px;
+  color: #74182e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .86rem;
+  font-style: italic;
+  border: 1px solid rgba(116, 24, 46, .13);
+  border-radius: 999px;
+  background: rgba(255,255,255,.26);
+  box-shadow: inset 0 1px rgba(255,255,255,.62);
+}
+
 .personal-page h1,
 .personal-page h2,
 .personal-page .date-line {
@@ -441,6 +601,51 @@ body {
 
   .personal-page h1 span + span {
     margin-top: 9px;
+  }
+
+  .bride-intro h1 {
+    font-size: 4.8rem;
+    line-height: .72;
+  }
+
+  .bride-teaser {
+    margin-top: 29px;
+    font-size: 1.15rem;
+  }
+
+  .bride-copy {
+    font-size: .98rem;
+    line-height: 1.6;
+  }
+
+  .bride-details {
+    margin-top: 31px;
+    padding-right: 17px;
+    padding-left: 17px;
+    border-radius: 24px;
+  }
+
+  .bride-details .date-line {
+    gap: 8px;
+  }
+
+  .bride-details .date-day,
+  .bride-details .date-time {
+    font-size: 2.05rem;
+  }
+
+  .bride-details .date-month {
+    font-size: 2.45rem;
+  }
+
+  .bride-details .date-line > i {
+    width: 22px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .friends-signature ul {
+    gap: 7px;
   }
 
   .personal-page .hero-art::after {
