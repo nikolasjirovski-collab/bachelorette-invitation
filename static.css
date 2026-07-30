@@ -1,0 +1,498 @@
+@font-face {
+  font-family: "Bikham";
+  src: url("assets/fonts/BikhamCyrScript.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --paper: #f6cbd8;
+  --paper-light: #fde4eb;
+  --wine: #74182e;
+  --ink: #694a54;
+  --rose: #df6488;
+  --gold: #dcae47;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #efbccb;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, #edb9c8, var(--paper) 9%, var(--paper) 91%, #edb9c8);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+}
+
+.invitation {
+  position: relative;
+  width: min(100%, 760px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 78px) clamp(24px, 6vw, 60px) 38px;
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255,255,255,.48), transparent 35%),
+    radial-gradient(circle, rgba(255,255,255,.38) 0 1px, transparent 1.2px);
+  background-size: auto, 27px 27px;
+  box-shadow: 0 0 60px rgba(105, 28, 52, .08);
+}
+
+.invitation::before,
+.invitation::after {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  pointer-events: none;
+  border: 1px solid rgba(116, 24, 46, .13);
+}
+
+.invitation::after {
+  inset: 21px;
+  border-color: rgba(255,255,255,.55);
+}
+
+.intro,
+.celebration,
+.details,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.kicker {
+  color: #98465c;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.kicker::before,
+.kicker::after {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  margin: 0 13px 3px;
+  background: currentColor;
+  opacity: .42;
+}
+
+h1 {
+  margin-top: 20px;
+  color: var(--wine);
+  font-family: "Bikham", "Times New Roman", serif;
+  font-size: clamp(4.5rem, 11vw, 7.1rem);
+  font-weight: 400;
+  line-height: .68;
+  text-shadow: 0 1px rgba(255,255,255,.62);
+}
+
+.lead {
+  margin-top: 29px;
+  color: #765761;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.guest-list {
+  max-width: 590px;
+  margin: 29px auto 0;
+  color: var(--wine);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(.74rem, 2vw, .92rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.65;
+  letter-spacing: .045em;
+}
+
+.guest-list + .lead {
+  margin-top: 12px;
+}
+
+.celebration {
+  width: min(620px, 112%);
+  margin: 48px 50% 0;
+  transform: translateX(-50%);
+}
+
+.title-star {
+  margin-bottom: -5px;
+  color: var(--gold);
+  font-size: 1.9rem;
+}
+
+h2 {
+  position: relative;
+  z-index: 2;
+  color: var(--wine);
+  font: italic 700 clamp(2.55rem, 7vw, 3.9rem)/1 Georgia, "Times New Roman", serif;
+  letter-spacing: -.035em;
+  transform: rotate(-2deg);
+  text-shadow: 0 2px rgba(255,255,255,.54);
+}
+
+.hero-art {
+  position: relative;
+  margin: -5px auto 0;
+}
+
+.hero-art::before,
+.hero-art::after {
+  content: "✦";
+  position: absolute;
+  z-index: 2;
+  color: var(--gold);
+  font-size: 1.35rem;
+}
+
+.hero-art::before {
+  left: 7%;
+  top: 31%;
+}
+
+.hero-art::after {
+  right: 8%;
+  top: 57%;
+  color: var(--rose);
+  font-size: 1rem;
+}
+
+.hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,.54);
+  border-radius: 30px;
+  image-rendering: auto;
+  box-shadow:
+    inset 0 0 0 6px rgba(255,255,255,.1),
+    0 18px 28px rgba(112, 30, 57, .1);
+}
+
+.hero-art figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-top: -13px;
+  color: rgba(116, 24, 46, .58);
+  font: 700 .57rem/1 "Courier New", monospace;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.hero-art figcaption span,
+.ornament span,
+.dress-rule span {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+
+.hero-art figcaption span:last-child,
+.ornament span:last-child,
+.dress-rule span:last-child {
+  transform: scaleX(-1);
+}
+
+.details {
+  width: min(570px, 100%);
+  margin: 44px auto 0;
+}
+
+.ornament,
+.dress-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: var(--gold);
+}
+
+.ornament {
+  margin-bottom: 22px;
+  font-size: .95rem;
+}
+
+.date-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 13px;
+  color: var(--wine);
+}
+
+.date-day,
+.date-time {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 6vw, 3.35rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.date-month {
+  font-family: "Bikham", Georgia, serif;
+  font-size: clamp(2.7rem, 7vw, 4rem);
+  line-height: .7;
+}
+
+.date-line > i {
+  width: 38px;
+  height: 1px;
+  margin: 0 4px 7px;
+  background: #9a5063;
+  transform: rotate(-62deg);
+  opacity: .55;
+}
+
+.carriage {
+  margin-top: 22px;
+  color: #785a63;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(.92rem, 2.5vw, 1.08rem);
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.dress-card {
+  margin-top: 46px;
+  padding: 31px clamp(18px, 5vw, 38px) 30px;
+  border: 1px solid rgba(116, 24, 46, .13);
+  border-radius: 28px;
+  background: rgba(255,255,255,.22);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.62),
+    0 15px 35px rgba(109,34,57,.06);
+}
+
+.dress-label {
+  color: var(--wine);
+  font-family: "Bikham", Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 4.1rem);
+  line-height: .72;
+}
+
+.dress-rule {
+  margin: 18px auto 23px;
+}
+
+.dress-rule i {
+  font-style: normal;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 5vw, 42px);
+}
+
+.palette > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  text-align: left;
+}
+
+.palette span {
+  color: #856570;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .72rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.palette b {
+  display: block;
+  color: var(--wine);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: .7rem;
+  font-style: normal;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.swatch {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 1px rgba(116,24,46,.08),
+    0 5px 12px rgba(105,30,54,.1);
+}
+
+.swatch::after {
+  content: "";
+  position: absolute;
+  inset: 6px 7px auto auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.72);
+}
+
+.bride {
+  background: linear-gradient(145deg, #fff, #f7edf0);
+}
+
+.friends {
+  background: linear-gradient(145deg, #f288a4, #d84d76);
+}
+
+footer {
+  margin-top: 33px;
+  color: rgba(116,24,46,.46);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .61rem;
+  font-style: italic;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .invitation {
+    padding: 43px 24px 30px;
+  }
+
+  .invitation::before {
+    inset: 9px;
+  }
+
+  .invitation::after {
+    inset: 14px;
+  }
+
+  .kicker {
+    font-size: .48rem;
+    letter-spacing: .17em;
+  }
+
+  .kicker::before,
+  .kicker::after {
+    width: 17px;
+    margin-inline: 7px;
+  }
+
+  h1 {
+    margin-top: 16px;
+    font-size: 3.25rem;
+    line-height: .64;
+  }
+
+  h1 span {
+    display: block;
+  }
+
+  h1 span + span {
+    margin-top: 9px;
+  }
+
+  .lead {
+    max-width: 285px;
+    margin: 12px auto 0;
+    font-size: .9rem;
+  }
+
+  .guest-list {
+    max-width: 310px;
+    margin-top: 28px;
+    font-size: .7rem;
+    line-height: 1.7;
+    letter-spacing: .025em;
+  }
+
+  .celebration {
+    width: calc(100% + 30px);
+    margin-top: 39px;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  .hero-art {
+    margin-top: 2px;
+  }
+
+  .hero-art figcaption {
+    gap: 7px;
+    margin-top: -3px;
+    font-size: .46rem;
+    letter-spacing: .1em;
+  }
+
+  .hero-art figcaption span {
+    width: 22px;
+  }
+
+  .details {
+    margin-top: 38px;
+  }
+
+  .date-line {
+    gap: 9px;
+  }
+
+  .date-line > i {
+    width: 22px;
+  }
+
+  .carriage br {
+    display: none;
+  }
+
+  .dress-card {
+    margin-top: 38px;
+    padding-inline: 16px;
+  }
+
+  .palette {
+    gap: 12px;
+  }
+
+  .palette > div {
+    gap: 9px;
+  }
+
+  .palette span {
+    font-size: .64rem;
+  }
+
+  .palette b {
+    font-size: .6rem;
+  }
+
+  .swatch {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,463 @@
+@import url("static.css?v=20260730-personal-base");
+
+@font-face {
+  font-family: "Cormorant Infant";
+  src: url("assets/fonts/CormorantInfant-SemiBoldItalic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 600;
+}
+
+:root {
+  --paper: #f0acb2;
+  --paper-light: #f0acb2;
+}
+
+html,
+body {
+  background: #f0acb2;
+}
+
+.invitation {
+  background-color: #f0acb2;
+  background-image:
+    radial-gradient(circle at 50% 24%, rgba(255,255,255,.2), transparent 36%),
+    radial-gradient(circle, rgba(255,255,255,.34) 0 1px, transparent 1.2px);
+  background-size: auto, 27px 27px;
+}
+
+.hub-page {
+  padding-bottom: 46px;
+}
+
+.hub-page h1 {
+  font-size: clamp(4.8rem, 12vw, 7.6rem);
+}
+
+.hub-hero {
+  position: relative;
+  z-index: 1;
+  width: min(470px, 90%);
+  margin: 28px auto -10px;
+}
+
+.hub-art {
+  margin: 0;
+}
+
+.hub-art img {
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 6px rgba(255,255,255,.1),
+    0 20px 34px rgba(112,30,57,.1);
+}
+
+.guest-links {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: min(570px, 100%);
+  margin: 31px auto 0;
+}
+
+.guest-links a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  min-height: 76px;
+  padding: 15px 18px;
+  overflow: hidden;
+  color: var(--wine);
+  text-align: left;
+  text-decoration: none;
+  border: 1px solid rgba(116,24,46,.12);
+  border-radius: 18px;
+  background: rgba(255,255,255,.24);
+  box-shadow: inset 0 1px rgba(255,255,255,.6);
+}
+
+.guest-links a::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: -18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--guest-accent);
+  opacity: .13;
+}
+
+.guest-links i {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: #fff;
+  font: 700 .63rem/1 "Courier New", monospace;
+  font-style: normal;
+  border-radius: 50%;
+  background: var(--guest-accent);
+}
+
+.guest-links b {
+  align-self: end;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.guest-links span {
+  color: rgba(116,24,46,.56);
+  font: 700 .5rem/1.5 "Courier New", monospace;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.personal-page {
+  --personal-accent: var(--wine);
+}
+
+.personal-page h1,
+.personal-page h2,
+.personal-page .date-line {
+  color: var(--personal-accent);
+}
+
+.personal-page h1 {
+  font-family: "Cormorant Infant", Georgia, "Times New Roman", serif;
+  font-size: clamp(3.55rem, 8.8vw, 5.55rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: .88;
+  letter-spacing: -.045em;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.52),
+    0 7px 18px rgba(121,22,50,.08);
+}
+
+.personal-page h1 span {
+  display: inline;
+  white-space: nowrap;
+}
+
+.personal-note {
+  margin: 30px auto 0;
+  color: var(--personal-accent);
+  font: 700 .66rem/1.6 "Courier New", monospace;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.personal-note + .lead {
+  margin-top: 12px;
+}
+
+.personal-page .celebration {
+  margin-top: 42px;
+}
+
+.personal-page .hero-art {
+  isolation: isolate;
+}
+
+.personal-page .hero-art img {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  mask-image: radial-gradient(ellipse 90% 91% at 50% 50%, #000 72%, transparent 99%);
+}
+
+.personal-page .hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 23px;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      108deg,
+      transparent 0 41%,
+      rgba(255,255,255,.12) 45%,
+      rgba(255,255,255,.92) 49%,
+      rgba(255,238,248,.45) 52%,
+      transparent 58% 100%
+    );
+  background-position: 155% 0;
+  background-size: 240% 100%;
+  background-repeat: no-repeat;
+  clip-path: polygon(
+    2% 39%, 98% 39%, 55% 82%, 55% 93%,
+    70% 96%, 70% 99%, 30% 99%, 30% 96%,
+    45% 93%, 45% 82%
+  );
+  mix-blend-mode: screen;
+  animation: glassShimmer 3.9s 1.1s ease-in-out infinite;
+}
+
+.personal-page .hero-art::after {
+  content: "✦";
+  position: absolute;
+  right: 16%;
+  top: 66%;
+  z-index: 4;
+  color: #fff;
+  font-size: 1.1rem;
+  text-shadow: 0 0 9px rgba(255,255,255,.95);
+  animation: glassSpark 2.6s ease-in-out infinite;
+}
+
+.glass-edge-overlay {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,.42));
+}
+
+.glass-edge-line {
+  fill: none;
+  stroke: url("#glass-edge-sheen");
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 44 78 13 96;
+  opacity: .88;
+  filter:
+    drop-shadow(0 0 3px rgba(255,255,255,.96))
+    drop-shadow(0 0 7px rgba(255,150,210,.72));
+  animation: glassEdgeTravel 4.8s linear infinite;
+}
+
+.glass-edge-line.is-inner {
+  stroke-width: 4.5;
+  stroke-dasharray: 22 90 8 64;
+  opacity: .72;
+  animation-duration: 3.8s;
+  animation-direction: reverse;
+}
+
+.glass-edge-line.is-rim {
+  stroke-width: 6;
+  stroke-dasharray: 26 36 8 44;
+  opacity: .96;
+  animation-duration: 3.2s;
+}
+
+.glass-edge-line.is-stem {
+  stroke-width: 6.5;
+  stroke-dasharray: 18 34 6 44;
+  animation-duration: 2.9s;
+}
+
+.glass-edge-line.is-base {
+  stroke-width: 7;
+  stroke-dasharray: 35 68 11 48;
+  animation-duration: 4.1s;
+}
+
+.glass-edge-glint {
+  fill: #fff;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  filter:
+    drop-shadow(0 0 4px #fff)
+    drop-shadow(0 0 10px rgba(255,155,213,.95));
+  animation: edgeGlint 3.4s var(--edge-delay) ease-in-out infinite;
+}
+
+.glass-edge-glint.is-soft {
+  fill: #ffd7ea;
+  animation-duration: 4.1s;
+}
+
+.personal-page .title-star,
+.personal-page .ornament {
+  color: var(--personal-accent);
+}
+
+.personal-page .details {
+  margin-top: 14px;
+}
+
+.star-field {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.screen-star {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  opacity: var(--opacity);
+  background: linear-gradient(135deg, #ffd9e7, #e96798 62%, #fff0f7);
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+  filter:
+    drop-shadow(0 0 3px rgba(255,255,255,.42))
+    drop-shadow(0 0 6px rgba(230,91,139,.52));
+  animation: screenStarDance var(--duration) var(--delay) ease-in-out infinite;
+}
+
+.screen-star.is-white {
+  background: #fff;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.86));
+}
+
+.screen-star.is-cross {
+  clip-path: polygon(
+    46% 0, 54% 0, 56% 42%, 100% 46%, 100% 54%,
+    56% 57%, 54% 100%, 46% 100%, 43% 57%, 0 54%,
+    0 46%, 43% 42%
+  );
+}
+
+@keyframes glassShimmer {
+  0%, 13% { background-position: 155% 0; opacity: 0; }
+  24% { opacity: .9; }
+  58% { background-position: -155% 0; opacity: .72; }
+  72%, 100% { background-position: -155% 0; opacity: 0; }
+}
+
+@keyframes glassSpark {
+  0%,100% { opacity: .2; transform: rotate(0) scale(.45); }
+  48% { opacity: 1; transform: rotate(90deg) scale(1.25); }
+}
+
+@keyframes glassEdgeTravel {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: .45;
+  }
+  38% {
+    opacity: 1;
+  }
+  72% {
+    opacity: .74;
+  }
+  100% {
+    stroke-dashoffset: -460;
+    opacity: .45;
+  }
+}
+
+@keyframes edgeGlint {
+  0%, 62%, 100% {
+    opacity: 0;
+    transform: rotate(0deg) scale(.25);
+  }
+  71% {
+    opacity: 1;
+    transform: rotate(42deg) scale(1.28);
+  }
+  82% {
+    opacity: .25;
+    transform: rotate(88deg) scale(.58);
+  }
+}
+
+@keyframes screenStarDance {
+  0%,100% {
+    opacity: calc(var(--opacity) * .28);
+    transform: translate3d(0,0,0) rotate(0) scale(.42);
+  }
+  31% {
+    opacity: var(--opacity);
+    transform: translate3d(var(--dx),var(--dy),0) rotate(120deg) scale(1.22);
+  }
+  66% {
+    opacity: calc(var(--opacity) * .82);
+    transform: translate3d(var(--dx2),var(--dy2),0) rotate(255deg) scale(.72);
+  }
+}
+
+.back-link {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  margin-top: 30px;
+  color: rgba(116,24,46,.62);
+  font: 700 .56rem/1 "Courier New", monospace;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.dress-card {
+  display: none !important;
+}
+
+@media (max-width: 560px) {
+  .hub-page h1 {
+    font-size: 3.55rem;
+  }
+
+  .hub-hero {
+    width: calc(100% + 8px);
+    margin-top: 21px;
+  }
+
+  .guest-links {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 25px;
+  }
+
+  .guest-links a {
+    min-height: 68px;
+    padding: 12px 16px;
+  }
+
+  .personal-note {
+    max-width: 290px;
+    margin-top: 28px;
+    font-size: .56rem;
+  }
+
+  .personal-page .celebration {
+    margin-top: 35px;
+  }
+
+  .personal-page h1 {
+    font-size: 3.15rem;
+    line-height: .82;
+  }
+
+  .personal-page h1 span {
+    display: block;
+  }
+
+  .personal-page h1 span + span {
+    margin-top: 9px;
+  }
+
+  .personal-page .hero-art::after {
+    right: 13%;
+    font-size: .85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personal-page .hero-art::before,
+  .personal-page .hero-art::after,
+  .glass-edge-line,
+  .glass-edge-glint,
+  .screen-star {
+    animation: none;
+  }
+}
