@@ -1,11 +1,11 @@
 @import url("static.css?v=20260730-personal-base");
 
 @font-face {
-  font-family: "Cormorant Infant";
-  src: url("assets/fonts/CormorantInfant-SemiBoldItalic.ttf") format("truetype");
+  font-family: "Great Vibes";
+  src: url("assets/fonts/GreatVibes-Regular.woff2") format("woff2");
   font-display: swap;
-  font-style: italic;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 400;
 }
 
 :root {
@@ -724,5 +724,63 @@ body {
   .glass-edge-glint,
   .screen-star {
     animation: none;
+  }
+}
+
+.bride-page,
+.bride-page * {
+  font-family: "Great Vibes", cursive !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.bride-page .kicker,
+.bride-page .ready-label {
+  font-size: 1rem;
+  letter-spacing: .14em;
+}
+
+.bride-page .bride-teaser {
+  font-size: clamp(1.52rem, 4vw, 1.9rem);
+}
+
+.bride-page .bride-copy {
+  font-size: clamp(1.35rem, 3.5vw, 1.58rem);
+  line-height: 1.48;
+}
+
+.bride-page .bride-note,
+.bride-page .secret-place {
+  font-size: clamp(1.3rem, 3vw, 1.48rem);
+  line-height: 1.42;
+}
+
+.bride-page .hero-art figcaption {
+  position: relative;
+  z-index: 6;
+  margin-top: 6px;
+  font-size: 1rem;
+  letter-spacing: .1em;
+}
+
+.bride-page .final-call {
+  font-size: clamp(1.45rem, 3.6vw, 1.72rem);
+}
+
+.bride-page .friends-signature > p {
+  font-size: clamp(3.2rem, 8vw, 4.55rem);
+}
+
+.bride-page .friends-signature li {
+  font-size: 1.35rem;
+}
+
+@media (max-width: 560px) {
+  .bride-page .bride-copy {
+    font-size: 1.25rem;
+  }
+
+  .bride-page .friends-signature li {
+    font-size: 1.17rem;
   }
 }
