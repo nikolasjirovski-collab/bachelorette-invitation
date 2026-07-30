@@ -3,7 +3,7 @@
   const isMobile = window.matchMedia("(max-width: 560px)").matches;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const field = document.createElement("div");
-  const count = reduceMotion ? 0 : isMobile ? 56 : 180;
+  const count = reduceMotion ? 0 : isMobile ? 170 : 260;
   let seed = 0x7f4a7c15;
 
   const random = () => {
@@ -48,7 +48,7 @@
 
   const glass = document.querySelector(".hero-art");
 
-  if (glass && !isMobile && !reduceMotion) {
+  if (glass && !reduceMotion) {
     const overlay = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     overlay.classList.add("glass-edge-overlay");
     overlay.setAttribute("viewBox", "0 0 1256 1256");
