@@ -19,11 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
 TMP = ROOT / "tmp" / "pdfs"
 FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
-SOURCE_ART = Path(
-    "/Users/nikolaykirsanov/.codex/generated_images/"
-    "019fa579-f361-75b0-854b-6572dd6476e0/"
-    "exec-05f7b00e-25aa-4b51-9fab-0b2cb28ecb95.png"
-)
+SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v2.png"
 MASKED_ART = TMP / "bride-in-glass-print-masked.png"
 
 PAPER = (240 / 255, 172 / 255, 178 / 255)
