@@ -388,7 +388,14 @@ body {
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  mask-image: radial-gradient(ellipse 90% 91% at 50% 50%, #000 72%, transparent 99%);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+    linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+    linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
 }
 
 .personal-page .hero-art::before {
