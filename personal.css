@@ -388,14 +388,20 @@ body {
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
-    linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
-    linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
-  mask-composite: intersect;
+  -webkit-mask-image: radial-gradient(
+    ellipse closest-side at 50% 50%,
+    #000 0 82%,
+    rgba(0, 0, 0, .9) 87%,
+    rgba(0, 0, 0, .48) 94%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse closest-side at 50% 50%,
+    #000 0 82%,
+    rgba(0, 0, 0, .9) 87%,
+    rgba(0, 0, 0, .48) 94%,
+    transparent 100%
+  );
 }
 
 .personal-page .hero-art::before {
@@ -522,7 +528,7 @@ body {
   z-index: 12;
   overflow: hidden;
   pointer-events: none;
-  contain: strict;
+  contain: layout paint;
 }
 
 .screen-star {
@@ -597,15 +603,15 @@ body {
 @keyframes screenStarDance {
   0%,100% {
     opacity: calc(var(--opacity) * .28);
-    transform: translate3d(0,0,0) rotate(0) scale(.42);
+    transform: translate(0,0) rotate(0) scale(.42);
   }
   31% {
     opacity: var(--opacity);
-    transform: translate3d(var(--dx),var(--dy),0) rotate(120deg) scale(1.22);
+    transform: translate(var(--dx),var(--dy)) rotate(120deg) scale(1.22);
   }
   66% {
     opacity: calc(var(--opacity) * .82);
-    transform: translate3d(var(--dx2),var(--dy2),0) rotate(255deg) scale(.72);
+    transform: translate(var(--dx2),var(--dy2)) rotate(255deg) scale(.72);
   }
 }
 

@@ -3,7 +3,7 @@
   const isMobile = window.matchMedia("(max-width: 560px)").matches;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const field = document.createElement("div");
-  const count = reduceMotion ? 0 : isMobile ? 170 : 260;
+  const count = reduceMotion ? 0 : isMobile ? 96 : 180;
   let seed = 0x7f4a7c15;
 
   const random = () => {
