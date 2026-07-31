@@ -1,8 +1,8 @@
 @import url("static.css?v=20260730-personal-base");
 
 @font-face {
-  font-family: "Shonen Third";
-  src: url("assets/fonts/Shonen-Third.woff2") format("woff2");
+  font-family: "Kosolapa Script";
+  src: url("assets/fonts/KosolapaScript-Regular.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -730,7 +730,7 @@ body {
 
 .bride-page,
 .bride-page * {
-  font-family: "Shonen Third", Georgia, serif !important;
+  font-family: "Kosolapa Script", "Cormorant Infant", Georgia, serif !important;
   font-style: normal !important;
   font-weight: 400 !important;
 }
