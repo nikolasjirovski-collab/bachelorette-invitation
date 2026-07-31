@@ -51,7 +51,7 @@
   if (glass && !reduceMotion) {
     const overlay = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     overlay.classList.add("glass-edge-overlay");
-    overlay.setAttribute("viewBox", "0 0 1256 1256");
+    overlay.setAttribute("viewBox", "0 0 1254 1254");
     overlay.setAttribute("aria-hidden", "true");
     overlay.innerHTML = `
       <defs>
@@ -63,16 +63,16 @@
           <stop offset="1" stop-color="#f59bc5" stop-opacity=".35"/>
         </linearGradient>
       </defs>
-      <path class="glass-edge-line" d="M38 498 L600 1055 Q624 1081 650 1057 L1090 520"/>
-      <path class="glass-edge-line is-inner" d="M112 544 L604 1024 Q624 1044 646 1026 L1019 560"/>
-      <path class="glass-edge-line is-rim" d="M38 498 Q165 524 307 520 M924 522 Q1025 526 1090 520"/>
-      <path class="glass-edge-line is-stem" d="M598 1058 L592 1132 M651 1060 L654 1133"/>
-      <ellipse class="glass-edge-line is-base" cx="624" cy="1172" rx="228" ry="35"/>
-      <path class="glass-edge-glint" style="--edge-delay:-.5s" d="M0-20 L6-6 L20 0 L6 6 L0 20 L-6 6 L-20 0 L-6-6Z" transform="translate(210 665)"/>
-      <path class="glass-edge-glint is-soft" style="--edge-delay:-2.1s" d="M0-18 L5-5 L18 0 L5 5 L0 18 L-5 5 L-18 0 L-5-5Z" transform="translate(927 676)"/>
-      <path class="glass-edge-glint" style="--edge-delay:-1.35s" d="M0-16 L5-5 L16 0 L5 5 L0 16 L-5 5 L-16 0 L-5-5Z" transform="translate(612 1037)"/>
-      <path class="glass-edge-glint is-soft" style="--edge-delay:-3.2s" d="M0-15 L4-4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4-4Z" transform="translate(485 1170)"/>
-      <path class="glass-edge-glint" style="--edge-delay:-2.65s" d="M0-14 L4-4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4-4Z" transform="translate(775 1174)"/>
+      <path class="glass-edge-line" d="M208 491 L622 976 Q650 1002 681 977 L1096 491"/>
+      <path class="glass-edge-line is-inner" d="M278 536 L627 950 Q650 971 675 952 L1022 536"/>
+      <path class="glass-edge-line is-rim" d="M210 491 Q350 519 486 501 M815 502 Q965 519 1095 491"/>
+      <path class="glass-edge-line is-stem" d="M622 983 L619 1108 M680 981 L683 1108"/>
+      <ellipse class="glass-edge-line is-base" cx="651" cy="1129" rx="220" ry="33"/>
+      <path class="glass-edge-glint" style="--edge-delay:-.5s" d="M0-20 L6-6 L20 0 L6 6 L0 20 L-6 6 L-20 0 L-6-6Z" transform="translate(336 641)"/>
+      <path class="glass-edge-glint is-soft" style="--edge-delay:-2.1s" d="M0-18 L5-5 L18 0 L5 5 L0 18 L-5 5 L-18 0 L-5-5Z" transform="translate(960 643)"/>
+      <path class="glass-edge-glint" style="--edge-delay:-1.35s" d="M0-16 L5-5 L16 0 L5 5 L0 16 L-5 5 L-16 0 L-5-5Z" transform="translate(651 975)"/>
+      <path class="glass-edge-glint is-soft" style="--edge-delay:-3.2s" d="M0-15 L4-4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4-4Z" transform="translate(500 1128)"/>
+      <path class="glass-edge-glint" style="--edge-delay:-2.65s" d="M0-14 L4-4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4-4Z" transform="translate(803 1129)"/>
     `;
     glass.append(overlay);
   }
