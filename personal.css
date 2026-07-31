@@ -719,6 +719,30 @@ body {
   }
 }
 
+/* Open composition: no frames, cards, pills, or ornamental rules. */
+.bride-page::before,
+.bride-page::after,
+.bride-page .kicker::before,
+.bride-page .kicker::after,
+.bride-page .ornament span,
+.bride-page .hero-art figcaption span {
+  display: none;
+}
+
+.bride-page .bride-details {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.bride-page .friends-signature li {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .personal-page .hero-art::before,
   .personal-page .hero-art::after,
