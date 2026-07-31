@@ -8,6 +8,10 @@ import random
 from pathlib import Path
 
 from PIL import Image
+from reportlab.graphics import renderPDF
+from reportlab.graphics.barcode.qr import QrCodeWidget
+from reportlab.graphics.shapes import Drawing
+from reportlab.lib.colors import Color
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
@@ -16,11 +20,13 @@ from reportlab.pdfgen import canvas
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
+OUTPUT_CLEAN = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
+OUTPUT_WITH_QR = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4-with-qr.pdf"
 TMP = ROOT / "tmp" / "pdfs"
 FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
 SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v2.png"
 MASKED_ART = TMP / "bride-in-glass-print-masked.png"
+SITE_URL = "https://nikolasjirovski-collab.github.io/bachelorette-invitation/"
 
 PAPER = (240 / 255, 172 / 255, 178 / 255)
 WINE = (116 / 255, 24 / 255, 46 / 255)
@@ -146,13 +152,30 @@ def draw_background(page: canvas.Canvas) -> None:
         draw_star(page, x, y, radius, color, alpha)
 
 
-def build_pdf() -> None:
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+def draw_qr(page: canvas.Canvas, x: float, y: float, size: float) -> None:
+    qr = QrCodeWidget(
+        SITE_URL,
+        barLevel="H",
+        barBorder=4,
+        barFillColor=Color(*WINE),
+        barWidth=size,
+        barHeight=size,
+    )
+    drawing = Drawing(size, size)
+    drawing.add(qr)
+    renderPDF.draw(drawing, page, x, y)
+
+    set_color(page, WINE, .82)
+    page.setFont("Gabin", 6.2)
+    page.drawCentredString(x + size / 2, y - 9, "СКАНИРУЙ")
+
+
+def build_pdf(output: Path, include_qr: bool) -> None:
+    output.parent.mkdir(parents=True, exist_ok=True)
     TMP.mkdir(parents=True, exist_ok=True)
-    create_masked_art()
 
     pdfmetrics.registerFont(TTFont("Gabin", str(FONT)))
-    page = canvas.Canvas(str(OUTPUT), pagesize=A4, pageCompression=1)
+    page = canvas.Canvas(str(output), pagesize=A4, pageCompression=1)
     page.setTitle("Настя, этот вечер - твой!")
     page.setAuthor("Твои девчонки")
     page.setSubject("Печатное приглашение на девичник, 15 августа")
@@ -190,6 +213,8 @@ def build_pdf() -> None:
         preserveAspectRatio=True,
         mask="auto",
     )
+    if include_qr:
+        draw_qr(page, 480, 185, 72)
 
     draw_centered(page, "ГЛАВНАЯ ГЕРОИНЯ ВЕЧЕРА", 154, 7.6, INK)
     draw_centered(page, "НИЧЕГО НЕ ПЛАНИРУЙ НА ЭТОТ ВЕЧЕР:", 132, 10.8, INK)
@@ -203,4 +228,6 @@ def build_pdf() -> None:
 
 
 if __name__ == "__main__":
-    build_pdf()
+    create_masked_art()
+    build_pdf(OUTPUT_CLEAN, include_qr=False)
+    build_pdf(OUTPUT_WITH_QR, include_qr=True)
