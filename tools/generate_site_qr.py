@@ -81,22 +81,14 @@ def build_share_card(qr_image: Image.Image) -> Image.Image:
     for star in stars:
         draw_star(draw, *star)
 
-    title_font = ImageFont.truetype(str(FONT), 132)
-    subtitle_font = ImageFont.truetype(str(FONT), 45)
-    label_font = ImageFont.truetype(str(FONT), 54)
-    small_font = ImageFont.truetype(str(FONT), 32)
-
-    centered_text(draw, 105, "НАСТЯ,", title_font, "#74182e")
-    centered_text(draw, 263, "ЭТОТ ВЕЧЕР — ТВОЙ!", subtitle_font, "#674952")
+    label_font = ImageFont.truetype(str(FONT), 92)
 
     qr_size = qr_image.width
     qr_x = (CARD_SIZE[0] - qr_size) // 2
-    qr_y = 415
+    qr_y = 345
     card.paste(qr_image, (qr_x, qr_y))
 
-    centered_text(draw, 1258, "ОТКРОЙ ПРИГЛАШЕНИЕ", label_font, "#74182e")
-    centered_text(draw, 1333, "НАВЕДИ КАМЕРУ НА QR-КОД", small_font, "#674952")
-    centered_text(draw, 1425, "15 АВГУСТА  •  16:30", subtitle_font, "#74182e")
+    centered_text(draw, 1192, "ОТКРЫВАЙ", label_font, "#74182e")
     return card
 
 
