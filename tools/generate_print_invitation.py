@@ -24,7 +24,7 @@ OUTPUT_CLEAN = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
 OUTPUT_WITH_QR = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4-with-qr.pdf"
 TMP = ROOT / "tmp" / "pdfs"
 FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
-SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v2.png"
+SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v3.png"
 MASKED_ART = TMP / "bride-in-glass-print-masked.png"
 SITE_URL = "https://nikolasjirovski-collab.github.io/bachelorette-invitation/"
 
@@ -42,6 +42,7 @@ def smoothstep(value: float) -> float:
 
 
 def create_masked_art() -> None:
+    TMP.mkdir(parents=True, exist_ok=True)
     image = Image.open(SOURCE_ART).convert("RGBA")
     width, height = image.size
     alpha = Image.new("L", image.size)
@@ -201,8 +202,6 @@ def build_pdf(output: Path, include_qr: bool) -> None:
     draw_centered(page, "15 АВГУСТА   /   16:30", 563, 27, WINE)
     draw_centered(page, "ОДЕВАЙСЯ ТАК, ЧТОБЫ ЧУВСТВОВАТЬ СЕБЯ САМОЙ КРАСИВОЙ", 536, 9.4, INK)
     draw_centered(page, "(ТЫ ВСЕГДА ТАКАЯ!)", 520, 9.8, WINE)
-    draw_centered(page, "МЕСТО ПОКА СЕКРЕТ - СКАЖЕМ БЛИЖЕ К ДЕЛУ.", 499, 9.4, INK)
-
     art_size = 340
     page.drawImage(
         ImageReader(str(MASKED_ART)),
