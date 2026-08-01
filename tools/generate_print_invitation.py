@@ -24,7 +24,7 @@ OUTPUT_CLEAN = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
 OUTPUT_WITH_QR = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4-with-qr.pdf"
 TMP = ROOT / "tmp" / "pdfs"
 FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
-SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v4.png"
+SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v5.png"
 MASKED_ART = TMP / "bride-in-glass-print-masked.png"
 SITE_URL = "https://nikolasjirovski-collab.github.io/bachelorette-invitation/"
 

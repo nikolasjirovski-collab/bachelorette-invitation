@@ -423,9 +423,9 @@ body {
   background-size: 240% 100%;
   background-repeat: no-repeat;
   clip-path: polygon(
-    16% 39%, 88% 39%, 54.5% 78%, 54.5% 88%,
-    71% 90%, 71% 93%, 34% 93%, 34% 90%,
-    49.5% 88%, 49.5% 78%
+    18% 39%, 89% 39%, 56.3% 78%, 56.3% 88.5%,
+    72% 90%, 72% 93%, 36% 93%, 36% 90%,
+    51.4% 88.5%, 51.4% 78%
   );
   mix-blend-mode: screen;
   animation: glassShimmer 3.9s 1.1s ease-in-out infinite;

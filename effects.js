@@ -63,16 +63,16 @@
           <stop offset="1" stop-color="#f59bc5" stop-opacity=".35"/>
         </linearGradient>
       </defs>
-      <path class="glass-edge-line" d="M208 491 L622 976 Q650 1002 681 977 L1096 491"/>
-      <path class="glass-edge-line is-inner" d="M278 536 L627 950 Q650 971 675 952 L1022 536"/>
-      <path class="glass-edge-line is-rim" d="M210 491 Q350 519 486 501 M815 502 Q965 519 1095 491"/>
-      <path class="glass-edge-line is-stem" d="M622 983 L619 1108 M680 981 L683 1108"/>
-      <ellipse class="glass-edge-line is-base" cx="651" cy="1129" rx="220" ry="33"/>
-      <path class="glass-edge-glint" style="--edge-delay:-.5s" d="M0-20 L6-6 L20 0 L6 6 L0 20 L-6 6 L-20 0 L-6-6Z" transform="translate(336 641)"/>
-      <path class="glass-edge-glint is-soft" style="--edge-delay:-2.1s" d="M0-18 L5-5 L18 0 L5 5 L0 18 L-5 5 L-18 0 L-5-5Z" transform="translate(960 643)"/>
-      <path class="glass-edge-glint" style="--edge-delay:-1.35s" d="M0-16 L5-5 L16 0 L5 5 L0 16 L-5 5 L-16 0 L-5-5Z" transform="translate(651 975)"/>
-      <path class="glass-edge-glint is-soft" style="--edge-delay:-3.2s" d="M0-15 L4-4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4-4Z" transform="translate(500 1128)"/>
-      <path class="glass-edge-glint" style="--edge-delay:-2.65s" d="M0-14 L4-4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4-4Z" transform="translate(803 1129)"/>
+      <path class="glass-edge-line" d="M229 491 L644 976 Q674 1002 706 977 L1111 491"/>
+      <path class="glass-edge-line is-inner" d="M294 536 L651 950 Q675 971 699 952 L1045 536"/>
+      <path class="glass-edge-line is-rim" d="M231 491 Q370 519 505 501 M835 502 Q978 519 1110 491"/>
+      <path class="glass-edge-line is-stem" d="M644 983 L642 1108 M705 981 L708 1108"/>
+      <ellipse class="glass-edge-line is-base" cx="676" cy="1129" rx="225" ry="33"/>
+      <path class="glass-edge-glint" style="--edge-delay:-.5s" d="M0-20 L6-6 L20 0 L6 6 L0 20 L-6 6 L-20 0 L-6-6Z" transform="translate(355 641)"/>
+      <path class="glass-edge-glint is-soft" style="--edge-delay:-2.1s" d="M0-18 L5-5 L18 0 L5 5 L0 18 L-5 5 L-18 0 L-5-5Z" transform="translate(981 643)"/>
+      <path class="glass-edge-glint" style="--edge-delay:-1.35s" d="M0-16 L5-5 L16 0 L5 5 L0 16 L-5 5 L-16 0 L-5-5Z" transform="translate(675 975)"/>
+      <path class="glass-edge-glint is-soft" style="--edge-delay:-3.2s" d="M0-15 L4-4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4-4Z" transform="translate(522 1128)"/>
+      <path class="glass-edge-glint" style="--edge-delay:-2.65s" d="M0-14 L4-4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4-4Z" transform="translate(827 1129)"/>
     `;
     glass.append(overlay);
   }
