@@ -24,7 +24,7 @@ OUTPUT_CLEAN = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
 OUTPUT_WITH_QR = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4-with-qr.pdf"
 TMP = ROOT / "tmp" / "pdfs"
 FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
-SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v5.png"
+SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v7-natural.png"
 MASKED_ART = TMP / "bride-in-glass-print-masked.png"
 SITE_URL = "https://nikolasjirovski-collab.github.io/bachelorette-invitation/"
 
@@ -199,7 +199,7 @@ def build_pdf(output: Path, include_qr: bool) -> None:
 
     draw_centered(page, "БУДЬ ГОТОВА", 611, 8.4, INK)
     draw_star(page, width / 2, 595, 4.2, WINE, 1)
-    draw_centered(page, "15 АВГУСТА   /   16:30", 563, 27, WINE)
+    draw_centered(page, "15 АВГУСТА   /   18:30", 563, 27, WINE)
     draw_centered(page, "ОДЕВАЙСЯ ТАК, ЧТОБЫ ЧУВСТВОВАТЬ СЕБЯ САМОЙ КРАСИВОЙ", 536, 9.4, INK)
     draw_centered(page, "(ТЫ ВСЕГДА ТАКАЯ!)", 520, 9.8, WINE)
     art_size = 340
