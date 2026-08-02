@@ -894,6 +894,10 @@ body {
   margin-top: -190px;
 }
 
+.bride-page .hero-art {
+  transform: translateX(-4.15%);
+}
+
 .bride-page .final-call {
   font-size: clamp(1.25rem, 3.2vw, 1.46rem);
   line-height: 1.38;
