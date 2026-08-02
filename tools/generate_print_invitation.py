@@ -200,26 +200,28 @@ def build_pdf(output: Path, include_qr: bool) -> None:
     draw_centered(page, "БУДЬ ГОТОВА", 611, 8.4, INK)
     draw_star(page, width / 2, 595, 4.2, WINE, 1)
     draw_centered(page, "15 АВГУСТА   /   18:30", 563, 27, WINE)
-    draw_centered(page, "ОДЕВАЙСЯ ТАК, ЧТОБЫ ЧУВСТВОВАТЬ СЕБЯ САМОЙ КРАСИВОЙ", 536, 9.4, INK)
-    draw_centered(page, "(ТЫ ВСЕГДА ТАКАЯ!)", 520, 9.8, WINE)
     art_size = 340
+    art_x = (width - art_size) / 2 - art_size * 0.0415
+    art_y = 222
     page.drawImage(
         ImageReader(str(MASKED_ART)),
-        (width - art_size) / 2,
-        155,
+        art_x,
+        art_y,
         width=art_size,
         height=art_size,
         preserveAspectRatio=True,
         mask="auto",
     )
+    draw_centered(page, "ОДЕВАЙСЯ ТАК, ЧТОБЫ ЧУВСТВОВАТЬ СЕБЯ САМОЙ КРАСИВОЙ", 536, 9.4, INK)
+    draw_centered(page, "(ТЫ ВСЕГДА ТАКАЯ!)", 520, 9.8, WINE)
     if include_qr:
-        draw_qr(page, 480, 185, 72)
+        draw_qr(page, 480, 247, 72)
 
-    draw_centered(page, "НИЧЕГО НЕ ПЛАНИРУЙ НА ЭТОТ ВЕЧЕР:", 132, 10.8, INK)
-    draw_centered(page, "ОН ЦЕЛИКОМ ТВОЙ!", 113, 13.3, WINE)
-    draw_centered(page, "ТВОИ ДЕВЧОНКИ", 78, 24, WINE)
-    draw_centered(page, "НИГИНА  •  АРИНА  •  АНЯ  •  ПОЛИНА", 51, 9.4, WINE)
-    draw_centered(page, "МАША  •  КАТЯ  •  АЛИНА", 34, 9.4, WINE)
+    draw_centered(page, "НИЧЕГО НЕ ПЛАНИРУЙ НА ЭТОТ ВЕЧЕР:", 177, 10.8, INK)
+    draw_centered(page, "ОН ЦЕЛИКОМ ТВОЙ!", 158, 13.3, WINE)
+    draw_centered(page, "ТВОИ ДЕВЧОНКИ", 123, 24, WINE)
+    draw_centered(page, "НИГИНА  •  АРИНА  •  АНЯ  •  ПОЛИНА", 96, 9.4, WINE)
+    draw_centered(page, "МАША  •  КАТЯ  •  АЛИНА", 79, 9.4, WINE)
 
     page.showPage()
     page.save()
