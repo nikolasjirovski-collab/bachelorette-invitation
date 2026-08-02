@@ -732,6 +732,80 @@ body {
   }
 }
 
+/* Dark evening edition: the glass stays pink; typography and ambient light turn gold. */
+:root {
+  --paper: #160b13;
+  --paper-light: #21101c;
+  --wine: #f0cf86;
+  --ink: #ead9d2;
+  --rose: #c35c7c;
+  --gold: #e5bd67;
+  --personal-accent: #e5bd67;
+}
+
+html,
+body {
+  color: #ead9d2;
+  background: #160b13;
+}
+
+.invitation {
+  background: #160b13;
+  box-shadow: none;
+}
+
+.bride-page {
+  --personal-accent: #e5bd67;
+}
+
+.bride-page .kicker,
+.ready-label,
+.bride-page .hero-art figcaption {
+  color: rgba(240, 207, 134, .78);
+}
+
+.bride-page h1,
+.bride-teaser,
+.personal-page .date-line,
+.friends-signature > p,
+.final-call strong {
+  color: #f0cf86;
+  text-shadow: 0 0 22px rgba(229, 189, 103, .12);
+}
+
+.bride-copy,
+.bride-note,
+.final-call {
+  color: #ead9d2;
+}
+
+.bride-note em {
+  color: #e8c16d;
+}
+
+.friends-signature li {
+  color: #efd99d !important;
+  text-shadow: 0 0 12px rgba(229, 189, 103, .12) !important;
+}
+
+.friends-signature li::before,
+.bride-page .ornament,
+.personal-page .title-star {
+  color: #e5bd67;
+}
+
+.screen-star {
+  background: linear-gradient(135deg, #fff3c8, #d9a542 58%, #f8d985);
+  filter: drop-shadow(0 0 5px rgba(229, 189, 103, .72));
+}
+
+.screen-star.is-white {
+  background: #ffeab3;
+  filter:
+    drop-shadow(0 0 5px rgba(255, 234, 179, .88))
+    drop-shadow(0 0 11px rgba(199, 143, 48, .55));
+}
+
 /* Open composition: no frames, cards, pills, or ornamental rules. */
 .bride-page::before,
 .bride-page::after,
@@ -764,6 +838,7 @@ body {
   .screen-star {
     animation: none;
   }
+
 }
 
 .bride-page,
@@ -815,6 +890,10 @@ body {
   letter-spacing: .1em;
 }
 
+.bride-page .celebration {
+  margin-top: -190px;
+}
+
 .bride-page .final-call {
   font-size: clamp(1.25rem, 3.2vw, 1.46rem);
   line-height: 1.38;
@@ -829,6 +908,10 @@ body {
 }
 
 @media (max-width: 560px) {
+  .bride-page .celebration {
+    margin-top: -105px;
+  }
+
   .bride-page .bride-intro h1 {
     font-size: 3.9rem;
   }

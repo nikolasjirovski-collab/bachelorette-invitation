@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the invitation QR code in the site's pink and wine palette."""
+"""Generate the invitation QR code in the site's dark and gold palette."""
 
 from pathlib import Path
 
@@ -22,13 +22,13 @@ FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
 
 def build_drawing() -> Drawing:
     drawing = Drawing(SIZE, SIZE)
-    drawing.add(Rect(0, 0, SIZE, SIZE, fillColor=HexColor("#f0acb2"), strokeColor=None))
+    drawing.add(Rect(0, 0, SIZE, SIZE, fillColor=HexColor("#160b13"), strokeColor=None))
 
     qr = QrCodeWidget(
         SITE_URL,
         barLevel="H",
         barBorder=4,
-        barFillColor=HexColor("#74182e"),
+        barFillColor=HexColor("#f0cf86"),
         barWidth=SIZE,
         barHeight=SIZE,
     )
@@ -60,23 +60,23 @@ def draw_star(draw: ImageDraw.ImageDraw, x: int, y: int, radius: int, fill: str)
 
 
 def build_share_card(qr_image: Image.Image) -> Image.Image:
-    card = Image.new("RGB", CARD_SIZE, "#f0acb2")
+    card = Image.new("RGB", CARD_SIZE, "#160b13")
     draw = ImageDraw.Draw(card)
 
     for row, y in enumerate(range(18, CARD_SIZE[1], 30)):
         offset = 8 if row % 2 else 0
         for x in range(18 + offset, CARD_SIZE[0], 30):
-            draw.ellipse((x, y, x + 2, y + 2), fill="#f8cbd0")
+            draw.ellipse((x, y, x + 2, y + 2), fill="#402539")
 
     stars = [
-        (104, 132, 17, "#ffffff"),
-        (1090, 190, 12, "#d29731"),
-        (176, 484, 11, "#df5c89"),
-        (1040, 610, 19, "#ffffff"),
-        (94, 1282, 13, "#d29731"),
-        (1092, 1370, 16, "#df5c89"),
-        (1002, 1108, 8, "#ffffff"),
-        (170, 1026, 8, "#ffffff"),
+        (104, 132, 17, "#fff3c8"),
+        (1090, 190, 12, "#e5bd67"),
+        (176, 484, 11, "#c35c7c"),
+        (1040, 610, 19, "#fff3c8"),
+        (94, 1282, 13, "#e5bd67"),
+        (1092, 1370, 16, "#c35c7c"),
+        (1002, 1108, 8, "#fff3c8"),
+        (170, 1026, 8, "#fff3c8"),
     ]
     for star in stars:
         draw_star(draw, *star)
@@ -88,7 +88,7 @@ def build_share_card(qr_image: Image.Image) -> Image.Image:
     qr_y = 345
     card.paste(qr_image, (qr_x, qr_y))
 
-    centered_text(draw, 1192, "ОТКРЫВАЙ", label_font, "#74182e")
+    centered_text(draw, 1192, "ОТКРЫВАЙ", label_font, "#f0cf86")
     return card
 
 
@@ -101,7 +101,7 @@ def main() -> None:
     qr.qr.make()
     module_count = qr.qr.moduleCount
     image_size = (module_count + QUIET_ZONE * 2) * PNG_MODULE_SIZE
-    image = Image.new("RGB", (image_size, image_size), "#f0acb2")
+    image = Image.new("RGB", (image_size, image_size), "#160b13")
     draw = ImageDraw.Draw(image)
     for row, modules in enumerate(qr.qr.modules):
         for column, enabled in enumerate(modules):
@@ -111,7 +111,7 @@ def main() -> None:
             y = (row + QUIET_ZONE) * PNG_MODULE_SIZE
             draw.rectangle(
                 (x, y, x + PNG_MODULE_SIZE - 1, y + PNG_MODULE_SIZE - 1),
-                fill="#74182e",
+                fill="#f0cf86",
             )
     image.save(OUTPUT_DIR / "site-invitation-qr.png", optimize=True)
     build_share_card(image).save(OUTPUT_DIR / "nastya-invitation-qr-card.png", optimize=True)

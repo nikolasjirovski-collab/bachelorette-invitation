@@ -24,16 +24,16 @@ OUTPUT_CLEAN = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4.pdf"
 OUTPUT_WITH_QR = ROOT / "output" / "pdf" / "nastya-bachelorette-invitation-a4-with-qr.pdf"
 TMP = ROOT / "tmp" / "pdfs"
 FONT = ROOT / "assets" / "fonts" / "Gabin-Regular.ttf"
-SOURCE_ART = ROOT / "assets" / "bride-in-glass-nastya-v7-natural.png"
-MASKED_ART = TMP / "bride-in-glass-print-masked.png"
+SOURCE_ART = ROOT / "assets" / "cocktail-glass-dark-v1.png"
+MASKED_ART = TMP / "cocktail-glass-dark-print-masked.png"
 SITE_URL = "https://nikolasjirovski-collab.github.io/bachelorette-invitation/"
 
-PAPER = (240 / 255, 172 / 255, 178 / 255)
-WINE = (116 / 255, 24 / 255, 46 / 255)
-INK = (103 / 255, 73 / 255, 82 / 255)
-WHITE = (1, 1, 1)
-ROSE = (224 / 255, 92 / 255, 137 / 255)
-GOLD = (210 / 255, 151 / 255, 49 / 255)
+PAPER = (22 / 255, 11 / 255, 19 / 255)
+WINE = (240 / 255, 207 / 255, 134 / 255)
+INK = (234 / 255, 217 / 255, 210 / 255)
+WHITE = (255 / 255, 243 / 255, 200 / 255)
+ROSE = (195 / 255, 92 / 255, 124 / 255)
+GOLD = (229 / 255, 189 / 255, 103 / 255)
 
 
 def smoothstep(value: float) -> float:
@@ -137,14 +137,14 @@ def draw_background(page: canvas.Canvas) -> None:
     set_color(page, PAPER)
     page.rect(0, 0, width, height, fill=1, stroke=0)
 
-    set_color(page, WHITE, 0.29)
+    set_color(page, WHITE, 0.08)
     for row, y in enumerate(range(14, round(height), 18)):
         offset = 5 if row % 2 else 0
         for x in range(10 + offset, round(width), 18):
             page.circle(x, y, 0.55, fill=1, stroke=0)
 
     rng = random.Random(7312026)
-    palette = [(WHITE, 0.7), (ROSE, 0.5), (GOLD, 0.72)]
+    palette = [(WHITE, 0.58), (ROSE, 0.42), (GOLD, 0.78)]
     for index in range(44):
         x = rng.uniform(22, width - 22)
         y = rng.uniform(24, height - 24)
@@ -215,7 +215,6 @@ def build_pdf(output: Path, include_qr: bool) -> None:
     if include_qr:
         draw_qr(page, 480, 185, 72)
 
-    draw_centered(page, "ГЛАВНАЯ ГЕРОИНЯ ВЕЧЕРА", 154, 7.6, INK)
     draw_centered(page, "НИЧЕГО НЕ ПЛАНИРУЙ НА ЭТОТ ВЕЧЕР:", 132, 10.8, INK)
     draw_centered(page, "ОН ЦЕЛИКОМ ТВОЙ!", 113, 13.3, WINE)
     draw_centered(page, "ТВОИ ДЕВЧОНКИ", 78, 24, WINE)
