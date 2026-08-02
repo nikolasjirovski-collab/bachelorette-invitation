@@ -183,7 +183,6 @@ def build_pdf(output: Path, include_qr: bool) -> None:
     draw_background(page)
 
     width, _ = A4
-    draw_centered(page, "СОВЕРШЕННО СЕКРЕТНО", 806, 8.2, WINE)
     draw_centered(page, "НАСТЯ,", 755, 49, WINE)
     draw_centered(page, "ТЫ НИ О ЧЁМ НЕ ДОГАДЫВАЕШЬСЯ...", 714, 14.3, WINE)
 
